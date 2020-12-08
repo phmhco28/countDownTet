@@ -1,6 +1,7 @@
 'use strict';
 console.clear();
 
+
 // This is a prime example of what starts out as a simple project
 // and snowballs way beyond its intended size. It's a little clunky
 // reading/working on this single file, but here it is anyways :)
@@ -115,8 +116,8 @@ const store = {
 	
 	state: {
 		// will be unpaused in init()
-		paused: true,
-		soundEnabled: false,
+		paused: false,
+		soundEnabled: true,
 		menuOpen: false,
 		openHelpTopic: null,
 		fullscreen: isFullscreen(),
@@ -2115,7 +2116,7 @@ const soundManager = {
 	ctx: new (window.AudioContext || window.webkitAudioContext),
 	sources: {
 		lift: {
-			volume: 1,
+			volume: 4,
 			playbackRateMin: 0.85,
 			playbackRateMax: 0.95,
 			fileNames: [
@@ -2125,7 +2126,7 @@ const soundManager = {
 			]
 		},
 		burst: {
-			volume: 1,
+			volume: 3.5,
 			playbackRateMin: 0.8,
 			playbackRateMax: 0.9,
 			fileNames: [
@@ -2134,7 +2135,7 @@ const soundManager = {
 			]
 		},
 		burstSmall: {
-			volume: 0.25,
+			volume: 0.5,
 			playbackRateMin: 0.8,
 			playbackRateMax: 1,
 			fileNames: [
